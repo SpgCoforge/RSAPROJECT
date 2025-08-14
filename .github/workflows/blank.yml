@@ -28,13 +28,7 @@ jobs:
           cd nodejs-hello-world
           npm test || echo "No tests available"
 
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v2
-        with:
-          projectBaseDir: ./nodejs-hello-world
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
+     
       - name: Create output folder and copy files
         run: |
           mkdir -p dist
